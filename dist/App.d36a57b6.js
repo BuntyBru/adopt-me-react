@@ -29808,21 +29808,37 @@ var _Pet = _interopRequireDefault(require("./Pet"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = function App() {
-  return _react.default.createElement("div", {
-    id: "something"
-  }, [_react.default.createElement("h1", {}, "Adopt Me!!"), _react.default.createElement(_Pet.default, {
+  /*return React.createElement("div", { id: "something" }, [
+    React.createElement("h1", {}, "Adopt Me!!"),
+    React.createElement(Pet, {
+      name: "Luna",
+      animal: "Dog",
+      breed: "Havanese",
+    }),
+    React.createElement(Pet, {
+      name: "Pepper",
+      animal: "Dog",
+      breed: "Cockateil",
+    }),
+    React.createElement(Pet, {
+      name: "Doink",
+      animal: "Cat",
+      breed: "mixed",
+    }),
+  ]);*/
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Adopt me !!!"), /*#__PURE__*/_react.default.createElement(_Pet.default, {
     name: "Luna",
     animal: "Dog",
     breed: "Havanese"
-  }), _react.default.createElement(_Pet.default, {
+  }), /*#__PURE__*/_react.default.createElement(_Pet.default, {
     name: "Pepper",
     animal: "Dog",
     breed: "Cockateil"
-  }), _react.default.createElement(_Pet.default, {
+  }), /*#__PURE__*/_react.default.createElement(_Pet.default, {
     name: "Doink",
-    animal: "Cat",
-    breed: "mixed"
-  })]);
+    animal: "Dog",
+    breed: "mix"
+  }));
 };
 
 (0, _reactDom.render)(_react.default.createElement(App), document.getElementById("root"));
@@ -29854,7 +29870,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52314" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62442" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
