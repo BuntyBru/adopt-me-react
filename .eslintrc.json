@@ -6,7 +6,8 @@
         "plugin:jsx-a11y/recommended",
         "prettier",
         "prettier/react"],
-    "plugins":["react","import","jsx-a11y"],
+    "plugins":["react","import","jsx-a11y","react-hooks"],
+    "parser":"babel-eslint",
     "rules":{
         "react/prop-types":0,
         "no-console":1

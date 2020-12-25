@@ -1,34 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { render } from "react-dom";
-import Pet from "./Pet";
+//import Pet from "./Pet";
+import SearchParams from "./searchParams";
+import { Link, Router } from "@reach/router";
+import Details from "./Details";
+import ThemeContext from "./ThemeContext";
 
 const App = () => {
-  /*return React.createElement("div", { id: "something" }, [
-    React.createElement("h1", {}, "Adopt Me!!"),
-    React.createElement(Pet, {
-      name: "Luna",
-      animal: "Dog",
-      breed: "Havanese",
-    }),
-    React.createElement(Pet, {
-      name: "Pepper",
-      animal: "Dog",
-      breed: "Cockateil",
-    }),
-    React.createElement(Pet, {
-      name: "Doink",
-      animal: "Cat",
-      breed: "mixed",
-    }),
-  ]);*/
-
+  const themeHook = useState("blue");
   return (
-    <div>
-      <h1>Adopt me !!</h1>
-      <Pet name="Luna" animal="Dog" breed="Havanese" />
-      <Pet name="Pepper" animal="Dog" breed="Cockateil" />
-      <Pet name="Doink" animal="Dog" breed="mix" />
-    </div>
+    <ThemeContext.Provider value={themeHook}>
+      <div>
+        <header>
+          <Link to="/">
+            <h1>Adopt me !!</h1>
+          </Link>
+        </header>
+
+        <Router>
+          <SearchParams path="/" />
+          <Details path="/details/:id" />
+        </Router>
+      </div>
+    </ThemeContext.Provider>
   );
 };
-render(React.createElement(App), document.getElementById("root"));
+render(<App />, document.getElementById("root"));
